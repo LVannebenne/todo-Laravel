@@ -8,8 +8,8 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
-        <!-- Styles -->
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <!-- Styles 
         <style>
             html, body {
                 background-color: #fff;
@@ -61,12 +61,15 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
-        </style>
+        </style>-->
     </head>
     <body>
-        <div id="app">            
-            <router-link class="btn btn-block btn-dark text-light" to="/">Accueil</router-link>
-            <router-link class="btn btn-block btn-dark text-light" to="/Dashboard">Dashboard</router-link>
+        <div id="app">
+            <div class="navbar justify-content-around">            
+                <router-link class="btn btn-dark text-light" to="/">Accueil</router-link>
+                <router-link class="btn btn-dark text-light" to="/Dashboard">Dashboard</router-link>
+                <a class="btn btn-dark text-light" href="/json">API JSON</a>
+            </div>
             <hr>
             <router-view></router-view>            
         </div>
