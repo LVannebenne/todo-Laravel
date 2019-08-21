@@ -66,11 +66,11 @@
     </head>
     <body>
         <div id="app">
-            <div class="navbar justify-content-around">
+            <!-- <div class="navbar justify-content-around">
                 <router-link class="btn btn-dark text-light" to="/">Accueil</router-link>
                 <router-link class="btn btn-dark text-light" to="/Dashboard">Dashboard</router-link>
                 <a class="btn btn-dark text-light" href="/json">API JSON</a>
-            </div>
+            </div> -->
             <hr>
             <router-view></router-view>
         </div>

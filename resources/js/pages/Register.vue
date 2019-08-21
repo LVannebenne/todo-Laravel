@@ -18,15 +18,30 @@
         </div>
 
         <div class="form-group" v-bind:class="{ 'has-error': has_error && errors.password }">
+          <label for="username">Pseudo</label>
+          <input type="username" id="username" class="form-control" v-model="username">
+        </div>
+
+        <div class="form-group" v-bind:class="{ 'has-error': has_error && errors.password }">
+          <label for="role">Votre Role</label>
+          <input type="role" id="role" class="form-control" v-model="role">
+        </div>
+
+        <div class="form-group" v-bind:class="{ 'has-error': has_error && errors.password }">
           <label for="password">Mot de passe</label>
           <input type="password" id="password" class="form-control" v-model="password">
           <span class="help-block" v-if="has_error && errors.password">{{ errors.password }}</span>
         </div>
 
+
+
         <div class="form-group" v-bind:class="{ 'has-error': has_error && errors.password }">
           <label for="password_confirmation">Confirmation mot de passe</label>
           <input type="password" id="password_confirmation" class="form-control" v-model="password_confirmation">
         </div>
+
+
+
 
         <button type="submit" class="btn btn-default">Inscription</button>
       </form>
@@ -40,6 +55,8 @@ export default {
     return {
       name: '',
       email: '',
+      username: '',
+      role: '',
       password: '',
       password_confirmation: '',
       has_error: false,
@@ -55,8 +72,10 @@ export default {
       this.$auth.register({
         data: {
           email: app.email,
+          username: app.username,
           password: app.password,
-          password_confirmation: app.password_confirmation
+          password_confirmation: app.password_confirmation,
+          role: app.role
         },
         success: function() {
           app.success = true

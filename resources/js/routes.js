@@ -9,16 +9,6 @@ import Dashboard from './pages/user/Dashboard.vue';
 import AdminDashboard from './pages/admin/Dashboard.vue';
 const routes = [
   {
-    name: 'Home',
-    path: '/',
-    component: HomeComponent
-  },
-  {
-    name: 'Dashboard',
-    path: '/dashboard',
-    component: DashboardComponent
-  },
-  {
     path: '/',
     name: 'home',
     component: Home,

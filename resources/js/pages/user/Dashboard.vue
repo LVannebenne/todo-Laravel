@@ -4,7 +4,7 @@
     <div class="card-header">Dashboard</div>
 
     <div class="card-body">
-      Bienvenue
+      Bienvenue oui
     </div>
   </div>
 </div>
