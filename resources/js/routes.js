@@ -1,19 +1,70 @@
 import HomeComponent from './components/HomeComponent';
+import Home from './pages/Home.vue';
+
+
 import DashboardComponent from './components/DashboardComponent';
-
-export default {
-    mode: 'history',
-
-    routes: [
-        {
-            name: 'Home',
-            path: '/',
-            component: HomeComponent
+import Register from './pages/Register.vue';
+import Login from './pages/Login.vue';
+import Dashboard from './pages/user/Dashboard.vue';
+import AdminDashboard from './pages/admin/Dashboard.vue';
+const routes = [
+  {
+    name: 'Home',
+    path: '/',
+    component: HomeComponent
+  },
+  {
+    name: 'Dashboard',
+    path: '/dashboard',
+    component: DashboardComponent
+  },
+  {
+    path: '/',
+    name: 'home',
+    component: Home,
+    meta: {
+      auth: undefined
+    }
+  },
+  {
+    path: '/register',
+    name: 'register',
+    component: Register,
+    meta: {
+      auth: false
+    }
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: Login,
+    meta: {
+      auth: false
+    }
+  },
+  // USER ROUTES
+  {
+    path: '/dashboard',
+    name: 'dashboard',
+    component: Dashboard,
+    meta: {
+      auth: true
+    }
+  },
+  // ADMIN ROUTES
+  {
+    path: '/admin',
+    name: 'admin.dashboard',
+    component: AdminDashboard,
+    meta: {
+      auth: {
+        roles: 2,
+        redirect: {
+          name: 'login'
         },
-        {
-            name: 'Dashboard',
-            path: '/dashboard',
-            component: DashboardComponent
-        }
-    ]
-};
+        forbiddenRedirect: '/403'
+      }
+    }
+  }
+]
+export default routes
