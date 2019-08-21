@@ -66,9 +66,10 @@
     <body>
         <div id="app">
             <div class="navbar justify-content-around">            
-                <router-link class="btn btn-dark text-light" to="/">Accueil</router-link>
-                <router-link class="btn btn-dark text-light" to="/Dashboard">Dashboard</router-link>
+                <router-link :to="{ name: 'Home' }" class="btn btn-dark text-light">Accueil</router-link>
+                <router-link :to="{ name: 'Dashboard' }" class="btn btn-dark text-light">Dashboard</router-link>
                 <a class="btn btn-dark text-light" href="/json">API JSON</a>
+                <router-link :to="{ name: 'Create' }" class="btn btn-primary">Create</router-link>
             </div>
             <hr>
             <router-view></router-view>            

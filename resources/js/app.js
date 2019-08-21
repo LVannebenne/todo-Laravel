@@ -9,32 +9,50 @@ require('./bootstrap');
 window.Vue = require('vue');
 
 import VueRouter from 'vue-router';
-
-import routes from './routes';
-
 Vue.use(VueRouter);
 
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
+import VueAxios from 'vue-axios';
+import axios from 'axios';
 
-// const files = require.context('./', true, /\.vue$/i);
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
+import App from './App.vue';
+Vue.use(VueAxios, axios);
 
-/*Vue.component('example-component', require('./components/ExampleComponent.vue').default);*/
+/*import routes from './routes';*/
 
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-
-const app = new Vue({
+/*const app = new Vue({
     el: '#app',
-
     router: new VueRouter(routes)
-});
+});*/
+
+import HomeComponent from './components/HomeComponent';
+import DashboardComponent from './components/DashboardComponent';
+import CreateComponent from './components/CreateComponent';
+import EditComponent from './components/EditComponent';
+
+const routes = [
+        {
+            name: 'Home',
+            path: '/',
+            component: HomeComponent
+        },
+        {
+            name: 'Dashboard',
+            path: '/dashboard',
+            component: DashboardComponent
+        },
+        {
+            name: 'Create',
+            path: '/create',
+            component: CreateComponent
+        },
+        {
+            name: 'Edit',
+            path: '/edit/:id',
+            component: EditComponent
+        }
+    ];
+
+const router = new VueRouter({ mode: 'history', routes: routes});
+  
+const app = new Vue(Vue.util.extend({ router }, App)).$mount('#app');
+
