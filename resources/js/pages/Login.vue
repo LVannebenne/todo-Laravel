@@ -51,11 +51,11 @@ export default {
           // handle redirection
           const redirectTo = redirect ? redirect.from.name :
             this.$auth.user().role === 2 ? 'admin.dashboard' : 'dashboard'
-          console.log(this.$auth.user().data);
+
           this.$router.push({
             name: redirectTo
           })
-          // console.log("logrole " + this.$auth.user().role);
+          console.log(this.$auth.user().role);
         },
         error: function() {
           app.has_error = true
