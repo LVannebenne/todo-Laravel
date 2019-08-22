@@ -12,9 +12,9 @@
       <th scope="col">Email</th>
       <th scope="col">Date d'inscription</th>
     </tr>
-    <tr v-for="user in users" v-bind:key="user.id" style="margin-bottom: 5px;">
-      <th scope="row">{{ user.id }}</th>
-      <td>{{ user.name }}</td>
+    <tr v-for="user in users" v-bind:key="user.id_user" style="margin-bottom: 5px;">
+      <th scope="row">{{ user.id_user }}</th>
+      <td>{{ user.username }}</td>
       <td>{{ user.email }}</td>
       <td>{{ user.created_at}}</td>
 

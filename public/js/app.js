@@ -3359,10 +3359,10 @@ __webpack_require__.r(__webpack_exports__);
         success: function success() {
           // handle redirection
           var redirectTo = redirect ? redirect.from.name : this.$auth.user().role === 2 ? 'admin.dashboard' : 'dashboard';
+          console.log(this.$auth.user().data);
           this.$router.push({
             name: redirectTo
-          });
-          console.log(this.$auth.user().role);
+          }); // console.log("logrole " + this.$auth.user().role);
         },
         error: function error() {
           app.has_error = true;
@@ -40345,11 +40345,13 @@ var render = function() {
         _vm._l(_vm.users, function(user) {
           return _c(
             "tr",
-            { key: user.id, staticStyle: { "margin-bottom": "5px" } },
+            { key: user.id_user, staticStyle: { "margin-bottom": "5px" } },
             [
-              _c("th", { attrs: { scope: "row" } }, [_vm._v(_vm._s(user.id))]),
+              _c("th", { attrs: { scope: "row" } }, [
+                _vm._v(_vm._s(user.id_user))
+              ]),
               _vm._v(" "),
-              _c("td", [_vm._v(_vm._s(user.name))]),
+              _c("td", [_vm._v(_vm._s(user.username))]),
               _vm._v(" "),
               _c("td", [_vm._v(_vm._s(user.email))]),
               _vm._v(" "),
