@@ -13,19 +13,14 @@ export default {
             component: HomeComponent
         },
         {
-            name: 'Dashboard',
-            path: '/dashboard',
-            component: DashboardComponent
-        },
-        {
             name: 'Create',
             path: '/create',
             component: CreateComponent
         },
         {
-            name: 'Edit',
-            path: '/edit/${id}',
-            component: EditComponent
+            name: 'CreateItem',
+            path: '/createitem/${id}',
+            component: CreateItemComponent
         }
     ]
 };

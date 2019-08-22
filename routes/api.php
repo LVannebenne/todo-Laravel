@@ -18,7 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::post('/todo/create', 'ListsController@store');
-Route::get('/todo/edit/{id}', 'ListsController@edit');
+Route::get('/todo/createItem/{id}', 'ListsController@edit');
 Route::get('/todos', 'ListsController@index');
 
 

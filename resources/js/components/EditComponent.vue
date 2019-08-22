@@ -1,7 +1,7 @@
 <template>
   <div>
     <H1>Add some items to our Todo</H1>
-    <form @submit.prevent="addItem(lists.id)">
+    <form @submit.prevent="addItem(lists.id_list)">
       <div class="row">
         <div class="col-md-6">
           <div class="form-group">
@@ -15,11 +15,8 @@
           <div class="row flex flex-row">
             <div class="card w-100">
               <ul class="list-group list-group-flush">
-                <li
-                  class="list-group-item d-flex align-items-center"
-                  v-for="it in itemsFrom"
-                  v-bind:key="it"
-                >
+                <li class="list-group-item d-flex align-items-center"
+                  v-for="it in itemsFrom">
                   <input type="checkbox" v-if="it.status" checked />
                   <input type="checkbox" v-else />
                   <p class="mb-0 pl-2">{{ it.description }}</p>
@@ -43,7 +40,7 @@ export default {
     };
   },
   created() {
-    let uri = `/api/todo/edit/${this.$route.params.id}`;
+    let uri = `/api/todo/createitem/${this.$route.params.id}`;
     this.axios.get(uri).then(response => {
       this.lists = response.data;
     });
@@ -54,11 +51,13 @@ export default {
   },
   methods: {
     addItem($id_list) {
+      this.items.id_list = $id_list;
+      console.log($id_list);
       let uri = "/api/item/create";
       this.axios
         .post(uri, this.items)
         .then(response => {
-          this.$router.push({ name: "Edit" });
+          this.$router.push({ name: "CreateItem" });
         })
         .catch(error => {
           console.error(error.response);

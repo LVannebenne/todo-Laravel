@@ -11,7 +11,8 @@ class ItemsController extends Controller
     //
     public function store(Request $request){
         $item = new Items([
-            'description' => $request->get('description')
+            'description' => $request->get('description'),
+            'id_list' => $request->get('id_list')
         ]);
 
         $item->save();

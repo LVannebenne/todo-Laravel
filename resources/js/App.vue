@@ -11,10 +11,10 @@
                         <router-link to="/" class="nav-link">Home</router-link>
                     </li>
                     <li class="nav-item">
-                        <router-link to="/Dashboard" class="nav-link">Dashboard</router-link>
+                        <router-link to="/mytodos" class="nav-link">My Todos</router-link>
                     </li>
                     <li class="nav-item dropdown">
-                        <router-link to="/create" class="nav-link">Create Todo</router-link>
+                        <router-link to="/create" class="nav-link">Create New Todo</router-link>
                     </li>
                 </ul>
             </div>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <H1>This is the Dashboard page</H1>
+    <H1>All my todos</H1>
     <div class="row flex flex-row">
       <div class="card" style="width: 18rem;" v-for="list in lists" :key="list.id_list">
         <div class="card-body">
@@ -9,7 +9,7 @@
             </div>
           <h6 class="card-subtitle mb-2 text-muted">Id: {{ list.id_list }} created by {{ list.id_user }}</h6>
           <p class="card-text">
-              <router-link :to="{name: 'Edit', params: { id: list.id_list }}" class="btn btn-warning">Edit</router-link>
+              <router-link :to="{name: 'CreateItem', params: { id: list.id_list }}" class="btn btn-warning">Show</router-link>
           </p>
           
         </div>

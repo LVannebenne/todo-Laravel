@@ -25,9 +25,9 @@ Vue.use(VueAxios, axios);
 });*/
 
 import HomeComponent from './components/HomeComponent';
-import DashboardComponent from './components/DashboardComponent';
-import CreateComponent from './components/CreateComponent';
-import EditComponent from './components/EditComponent';
+import CreateTodoComponent from './components/CreateTodoComponent';
+import CreateItemComponent from './components/CreateItemComponent';
+import MyTodosComponent from './components/MyTodosComponent';
 
 const routes = [
         {
@@ -36,19 +36,19 @@ const routes = [
             component: HomeComponent
         },
         {
-            name: 'Dashboard',
-            path: '/dashboard',
-            component: DashboardComponent
+            name: 'MyTodos',
+            path: '/mytodos',
+            component: MyTodosComponent
         },
         {
             name: 'Create',
             path: '/create',
-            component: CreateComponent
+            component: CreateTodoComponent
         },
         {
-            name: 'Edit',
-            path: '/edit/:id',
-            component: EditComponent
+            name: 'CreateItem',
+            path: '/createitem',
+            component: CreateItemComponent
         }
     ];
 
