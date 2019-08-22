@@ -19,7 +19,10 @@ class ListsController extends Controller
         return response()->json('success');
     }
     public function index() {
-        return new TestCollection(Lists::all());
+        return new TestCollection(
+            Lists::select('id_list','name','id_user')
+        ->orderBy('id_list', 'desc')
+        ->get());
     }
     public function edit($id) {
         $list = Lists::find($id);

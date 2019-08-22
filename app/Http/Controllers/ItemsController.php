@@ -24,8 +24,9 @@ class ItemsController extends Controller
     }
 
     public function findFromList(Request $request, $id){
-        return Items::select('description', 'status')
+        return Items::select('id_item', 'description', 'status')
             ->where ('id_list','=',$id)
+            ->orderBy('id_item', 'desc')
             ->get();
     }
 }

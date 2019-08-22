@@ -17,6 +17,7 @@ import axios from 'axios';
 import App from './App.vue';
 Vue.use(VueAxios, axios);
 
+
 /*import routes from './routes';*/
 
 /*const app = new Vue({
@@ -47,7 +48,7 @@ const routes = [
         },
         {
             name: 'CreateItem',
-            path: '/createitem',
+            path: '/createitem/:id',
             component: CreateItemComponent
         }
     ];
@@ -55,4 +56,3 @@ const routes = [
 const router = new VueRouter({ mode: 'history', routes: routes});
   
 const app = new Vue(Vue.util.extend({ router }, App)).$mount('#app');
-

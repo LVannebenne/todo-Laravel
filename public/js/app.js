@@ -1906,7 +1906,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -1921,7 +1920,6 @@ __webpack_require__.r(__webpack_exports__);
     var uri = "/api/todo/createItem/".concat(this.$route.params.id);
     this.axios.get(uri).then(function (response) {
       _this.lists = response.data;
-      console.log(response.data);
     });
     uri = "/api/items/fromlist/".concat(this.$route.params.id);
     this.axios.get(uri).then(function (response) {
@@ -1935,7 +1933,13 @@ __webpack_require__.r(__webpack_exports__);
       this.items.id_list = $id_list;
       var uri = "/api/item/create";
       this.axios.post(uri, this.items).then(function (response) {
-        _this2.$router.replace({
+        uri = "/api/items/fromlist/".concat(_this2.$route.params.id);
+
+        _this2.axios.get(uri).then(function (response) {
+          _this2.itemsFrom = response.data;
+        });
+
+        _this2.$router.push({
           name: "CreateItem",
           params: {
             $id_list: $id_list
@@ -1944,8 +1948,7 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         console.error(error.response);
       });
-    },
-    getAllItems: function getAllItems() {}
+    }
   }
 });
 
@@ -1996,9 +1999,9 @@ __webpack_require__.r(__webpack_exports__);
         console.error(error.response);
       }).then(function (response) {
         _this.$router.push({
-          name: "Create"
+          name: "MyTodos"
         })["catch"](function (error) {
-          console.log("shit happen");
+          console.error(error);
         });
 
         alert("New Todo Created!");
@@ -37582,10 +37585,7 @@ var render = function() {
                   _c("button", { staticClass: "btn btn-success" }, [
                     _vm._v("++")
                   ])
-                ]),
-                _vm._v(
-                  "\n          " + _vm._s(_vm.items.description) + "\n        "
-                )
+                ])
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "row flex flex-row" }, [
@@ -52942,7 +52942,7 @@ var routes = [{
   component: _components_CreateTodoComponent__WEBPACK_IMPORTED_MODULE_5__["default"]
 }, {
   name: 'CreateItem',
-  path: '/createitem',
+  path: '/createitem/:id',
   component: _components_CreateItemComponent__WEBPACK_IMPORTED_MODULE_6__["default"]
 }];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
@@ -53307,8 +53307,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/lvannebenne/Bureau/becode_projects/todoList/my_app/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/lvannebenne/Bureau/becode_projects/todoList/my_app/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/lvannebenne/Bureau/becode_projects/todoList/todo-Laravel/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/lvannebenne/Bureau/becode_projects/todoList/todo-Laravel/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

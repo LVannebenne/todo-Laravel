@@ -32,9 +32,9 @@
           this.axios.post(uri, this.lists).catch(error =>{
             console.error(error.response);
           }).then(response => {
-              this.$router.push({ name: "Create" })
+              this.$router.push({ name: "MyTodos" })
               .catch(error => {
-                console.log("shit happen");
+                console.error(error)
               });
               alert("New Todo Created!");
           });
