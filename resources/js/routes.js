@@ -1,12 +1,12 @@
-import HomeComponent from './components/HomeComponent';
 import Home from './pages/Home.vue';
-
-
-import DashboardComponent from './components/DashboardComponent';
 import Register from './pages/Register.vue';
 import Login from './pages/Login.vue';
 import Dashboard from './pages/user/Dashboard.vue';
 import AdminDashboard from './pages/admin/Dashboard.vue';
+import CreateTodoComponent from './components/CreateTodoComponent';
+import CreateItemComponent from './components/CreateItemComponent';
+import MyTodosComponent from './components/MyTodosComponent';
+
 const routes = [
   {
     path: '/',
@@ -28,6 +28,31 @@ const routes = [
     path: '/login',
     name: 'login',
     component: Login,
+    meta: {
+      auth: false
+    }
+  },
+  // TODO ROUTES
+  {
+    name: 'MyTodos',
+    path: '/mytodos',
+    component: MyTodosComponent,
+    meta: {
+      auth: false
+    }
+  },
+  {
+    name: 'Create',
+    path: '/create',
+    component: CreateTodoComponent,
+    meta: {
+      auth: false
+    }
+  },
+  {
+    name: 'CreateItem',
+    path: '/createitem/:id',
+    component: CreateItemComponent,
     meta: {
       auth: false
     }
