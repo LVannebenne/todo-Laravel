@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Test;
-
 use Illuminate\Http\Request;
+use App\Http\Resources\TestCollection;
+use App\Test;
 
 class Article extends Controller
 {
     //
     public function show_users() {
-        $tests = App\Test::all();
+        $tests = Test::all();
 
         foreach ($tests as $test) {
             echo $test->name;

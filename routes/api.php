@@ -34,3 +34,12 @@ Route::middleware('cors')->group(function () {
         Route::get('users/{id}', 'UserController@show')->middleware('isAdminOrSelf');
     });
 });
+
+Route::post('/todo/create', 'ListsController@store');
+Route::get('/todo/createItem/{id}', 'ListsController@edit');
+Route::get('/todos', 'ListsController@index');
+
+
+Route::post('/item/create', 'ItemsController@store');
+Route::get('/items', 'ItemsController@index');
+Route::get('/items/fromlist/{id}', 'ItemsController@findFromList');
