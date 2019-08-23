@@ -16,7 +16,7 @@ Mêmes informations d'authentification.
 ```
 ## Notre ressenti 
 Nous avons appris énormément de choses, mais avec un bémol pour le rythme qu'il a fallu tenir au vu de la deadline, très courte. Nous aurions apprécié un peu plus de temps. 
-La nécessité d'utiliser certaines technologies ensemble complexifie leur apprentissage. A certains moments, impossible pour nous, pauvres débutants de déterminé d'ou vient une erreur, apparue instantanément et sans rien avoir modifié. 
+La nécessité d'utiliser certaines technologies ensemble complexifie leur apprentissage. A certains moments, impossible pour nous, pauvres débutants de déterminer d'où vient une erreur, apparue instantanément et sans rien avoir modifié. 
  
 
 ## Participants
