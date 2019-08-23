@@ -20,25 +20,33 @@
 </template>
 
 <script>
-    export default {
-        data() {
-            return {
-              lists: {}
-            };
-        },
-    methods: {
-        addList() {
-          let uri = "/api/todo/create";
-          this.axios.post(uri, this.lists).catch(error =>{
-            console.error(error.response);
-          }).then(response => {
-              this.$router.push({ name: "MyTodos" })
-              .catch(error => {
-                console.error(error)
-              });
-              alert("New Todo Created!");
-          });
-        }
-    }
+export default {
+  data() {
+    return {
+      userinfo: {},
+      lists: {}
     };
+  },
+  created() {
+    this.userinfo = JSON.parse(localStorage.getItem("session"));
+  },
+  methods: {
+    addList() {
+      let uri = "/api/todo/create";
+      this.lists.id_user = this.userinfo.id_user;
+      console.log(this.lists.id_user);
+      this.axios
+        .post(uri, this.lists)
+        .catch(error => {
+          console.error(error.response);
+        })
+        .then(response => {
+          this.$router.push({ name: "MyTodos" }).catch(error => {
+            console.error(error);
+          });
+          alert(this.userinfo.id_user + "New Todo Created!");
+        });
+    }
+  }
+};
 </script>

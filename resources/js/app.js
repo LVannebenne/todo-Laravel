@@ -29,6 +29,7 @@ import HomeComponent from './components/HomeComponent';
 import CreateTodoComponent from './components/CreateTodoComponent';
 import CreateItemComponent from './components/CreateItemComponent';
 import MyTodosComponent from './components/MyTodosComponent';
+import ProfileComponent from './components/ProfileComponent';
 
 const routes = [
         {
@@ -50,6 +51,11 @@ const routes = [
             name: 'CreateItem',
             path: '/createitem/:id',
             component: CreateItemComponent
+        },
+        {
+            name: 'Profile',
+            path: '/profile',
+            component: ProfileComponent
         }
     ];
 

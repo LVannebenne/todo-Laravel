@@ -23,7 +23,7 @@ class ItemsController extends Controller
         return new TestCollection(Items::all());
     }
 
-    public function findFromList(Request $request, $id){
+    public function findFromList($id){
         return Items::select('id_item', 'description', 'status')
             ->where ('id_list','=',$id)
             ->orderBy('id_item', 'desc')

@@ -11,7 +11,8 @@ class ListsController extends Controller
     //
     public function store(Request $request){
         $list = new Lists([
-            'name' => $request->get('name')
+            'name' => $request->get('name'),
+            'id_user' => $request->get('id_user')
         ]);
 
         $list->save();
